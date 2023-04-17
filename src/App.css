@@ -44,55 +44,6 @@
   }
 }
 
-.card {
-  border: 1px solid teal;
-  padding: 2em 2em;
-  border-radius: 10%;
-}
-
-.card-smaller {
-  padding: 1em 1em;
-  width: 50%;
-}
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 2em;
-  padding-bottom: 2em;
-  /* height: 100vh; Set the height of the container to full viewport height */
-}
-
-.item {
-  width: calc(
-    50% - 10px
-  ); /* Set the width of each item to 50% of the container width with a margin of 10px */
-  height: 3em; /* Set the height of each item */
-  margin-bottom: 10px; /* Add a margin to the bottom of each item */
-  border: 1px solid teal;
-  border-radius: 5%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-}
-.item:hover {
-  background: teal;
-  color: black;
-}
-
-.item:nth-child(1),
-.item:nth-child(2) {
-  margin-top: 10px; /* Add a margin to the top of the first two items */
-}
-
-.item:nth-child(3),
-.item:nth-child(4) {
-  margin-bottom: 0; /* Remove the margin from the bottom of the last two items */
-}
-
 .next-button {
   background: #00acc1;
   border: 1px solid #00acc1;

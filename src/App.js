@@ -1,29 +1,16 @@
 import React from 'react';
 import './App.css';
+import Frame from './components/Frames.js';
+import { Logic } from './logic.js';
 
 function App() {
   const [currentAyah, setCurrentAyah] = React.useState(0);
-  const getOptions = (currentAyah) => {
-    let randomListOfStrings = [];
-    while (randomListOfStrings.length < 3) {
-      const randomIndex = Math.floor(
-        Math.random() * englishWordMeaningPool.length
-      );
-      const randomString = englishWordMeaningPool[randomIndex];
 
-      if (!randomListOfStrings.includes(randomString)) {
-        randomListOfStrings.push(randomString);
-      }
-    }
-    const randomIndex = Math.floor(
-      Math.random() * (englishWordMeaningPool.length + 1)
-    );
-    randomListOfStrings.splice(randomIndex, 0, data_set[currentAyah].meaning);
-    return randomListOfStrings;
-  };
   const [options, setOptions] = React.useState([]);
   React.useEffect(() => {
-    setOptions((prev) => getOptions(currentAyah));
+    setOptions((prev) =>
+      Logic.getOptions(currentAyah, englishWordMeaningPool, data_set)
+    );
   }, [currentAyah]);
   return (
     <div className="App">
@@ -32,25 +19,17 @@ function App() {
         listOfOptions={options}
       />
       <div style={{ paddingTop: '2em' }}>
-        <button className="next-button">next</button>
+        <button
+          onClick={() => setCurrentAyah((prev) => prev + 1)}
+          className="next-button"
+        >
+          next
+        </button>
       </div>
     </div>
   );
 }
-const Frame = ({ arabicText, listOfOptions }) => (
-  <div>
-    <div dir="rtl" className="card">
-      {arabicText}
-    </div>
-    <div className="container">
-      {listOfOptions.map((item, index) => (
-        <div className="item" key={index}>
-          {item}
-        </div>
-      ))}
-    </div>
-  </div>
-);
+
 export default App;
 
 const data_set = [
