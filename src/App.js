@@ -2,24 +2,37 @@ import React from 'react';
 import './App.css';
 
 function App() {
+  const [currentAyah, setCurrentAyah] = React.useState(0);
+  const getOptions = (currentAyah) => {
+    let randomListOfStrings = [];
+    while (randomListOfStrings.length < 3) {
+      const randomIndex = Math.floor(
+        Math.random() * englishWordMeaningPool.length
+      );
+      const randomString = englishWordMeaningPool[randomIndex];
+
+      if (!randomListOfStrings.includes(randomString)) {
+        randomListOfStrings.push(randomString);
+      }
+    }
+    const randomIndex = Math.floor(
+      Math.random() * (englishWordMeaningPool.length + 1)
+    );
+    randomListOfStrings.splice(randomIndex, 0, data_set[currentAyah].meaning);
+    return randomListOfStrings;
+  };
+  const [options, setOptions] = React.useState([]);
+  React.useEffect(() => {
+    setOptions((prev) => getOptions(currentAyah));
+  }, [currentAyah]);
   return (
     <div className="App">
       <Frame
-        arabicText="مرحبا بالعالم"
-        listOfOptions={['sd', 'asdfasd', 'asdfas', 'asdasas']}
+        arabicText={data_set[currentAyah].phraseArabic}
+        listOfOptions={options}
       />
       <div style={{ paddingTop: '2em' }}>
-        <button
-          style={{
-            background: '#00acc1',
-            border: '1px solid #00acc1',
-            borderRadius: '110px',
-            height: '2em',
-            width: '10em',
-          }}
-        >
-          next
-        </button>
+        <button className="next-button">next</button>
       </div>
     </div>
   );
@@ -39,6 +52,7 @@ const Frame = ({ arabicText, listOfOptions }) => (
   </div>
 );
 export default App;
+
 const data_set = [
   {
     ayahNumber: 0,
@@ -173,3 +187,5 @@ const data_set = [
     meaning: 'nor of those who go astray.',
   },
 ];
+
+const englishWordMeaningPool = data_set.map((object) => object.meaning);
