@@ -17,6 +17,15 @@ const getOptions = (currentAyah, englishWordMeaningPool, data_set) => {
   return randomListOfStrings;
 };
 
+const onClickAction = (currentAyah, setCurrentAyah, data_set, selectedOption) => {
+  if(selectedOption.target.innerHTML === data_set[currentAyah].meaning) {
+    setCurrentAyah(prev => prev + 1);
+  } else {
+    return true;
+  }
+}
+
 export const Logic = {
   getOptions,
+  onClickAction,
 };

@@ -17,6 +17,7 @@ function App() {
       <Frame
         arabicText={data_set[currentAyah].phraseArabic}
         listOfOptions={options}
+        onClickAction={(selectedOption) => Logic.onClickAction(currentAyah, setCurrentAyah, data_set, selectedOption)}
       />
       <div style={{ paddingTop: '2em' }}>
         <button
