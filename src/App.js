@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Frame from './components/Frames.js';
 import { Logic } from './logic.js';
+import ProgressBar from './components/ProgressBar/ProgressBar.js';
 
 function App() {
   const [currentAyah, setCurrentAyah] = React.useState(0);
@@ -14,19 +15,29 @@ function App() {
   }, [currentAyah]);
   return (
     <div className="App">
-      <Frame
-        arabicText={data_set[currentAyah].phraseArabic}
-        listOfOptions={options}
-        onClickAction={(selectedOption) => Logic.onClickAction(currentAyah, setCurrentAyah, data_set, selectedOption)}
-      />
+      <ProgressBar progress={(currentAyah * 100) / data_set.length} />
       <div style={{ paddingTop: '2em' }}>
+        <Frame
+          arabicText={data_set[currentAyah].phraseArabic}
+          listOfOptions={options}
+          onClickAction={(selectedOption) =>
+            Logic.onClickAction(
+              currentAyah,
+              setCurrentAyah,
+              data_set,
+              selectedOption
+            )
+          }
+        />
+      </div>
+      {/* <div style={{ paddingTop: '2em' }}>
         <button
           onClick={() => setCurrentAyah((prev) => prev + 1)}
           className="next-button"
         >
           next
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

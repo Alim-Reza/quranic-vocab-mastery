@@ -1,0 +1,28 @@
+.progressbar .progress {
+  background-color: #00acc1;
+  border-radius: 4px;
+  transition: width 400ms ease-in-out;
+  height: 100%;
+}
+
+.progressbar {
+  width: 100%;
+  height: 30px;
+  border-radius: 4px;
+  background-color: lightgrey;
+  /* padding: 10px; */
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+}
+
+#App {
+  width: 70%;
+  height: 100%;
+  margin: 10px;
+}

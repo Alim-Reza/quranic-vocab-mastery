@@ -1,7 +1,8 @@
 .card {
   border: 1px solid teal;
   padding: 2em 2em;
-  border-radius: 10%;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .card-smaller {
@@ -46,4 +47,3 @@
 .item:nth-child(4) {
   margin-bottom: 0; /* Remove the margin from the bottom of the last two items */
 }
-

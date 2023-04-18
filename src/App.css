@@ -51,3 +51,7 @@
   height: 2em;
   width: 10em;
 }
+.cylinder {
+  --fill-percentage: 0%;
+  /* other styles for the cylinder */
+}
