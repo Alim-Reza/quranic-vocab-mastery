@@ -3,7 +3,7 @@ import './App.css';
 import Frame from './components/Frames.js';
 import { Logic } from './logic.js';
 import ProgressBar from './components/ProgressBar/ProgressBar.js';
-
+import { Analytics } from '@vercel/analytics/react';
 function App() {
   const [currentAyah, setCurrentAyah] = React.useState(0);
 
@@ -15,6 +15,7 @@ function App() {
   }, [currentAyah]);
   return (
     <div className="App">
+      <Analytics />
       <ProgressBar progress={(currentAyah * 100) / data_set.length} />
       <div style={{ paddingTop: '2em' }}>
         <Frame
