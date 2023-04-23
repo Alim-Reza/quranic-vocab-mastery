@@ -20,6 +20,7 @@ function App() {
       <div style={{ paddingTop: '2em' }}>
         <Frame
           arabicText={data_set[currentAyah].phraseArabic}
+          englishTransliteration={data_set[currentAyah].phraseEnglish}
           listOfOptions={options}
           onClickAction={(selectedOption) =>
             Logic.onClickAction(

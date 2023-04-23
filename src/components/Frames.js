@@ -1,25 +1,36 @@
 import React from 'react';
 import './Frames.css';
 
-export default function Frame({ arabicText, listOfOptions, onClickAction }) {
+export default function Frame({
+  arabicText,
+  listOfOptions,
+  onClickAction,
+  englishTransliteration,
+}) {
   const FrameItem = ({ item, index }) => {
     const [buttonBg, setButtonBg] = React.useState(false);
     const handleClick = (event) => {
       const result = onClickAction(event);
-      if(result) {
+      if (result) {
         setButtonBg('#ff6663');
       }
-    }
+    };
     return (
-      <div className="item" key={index} style={{ background: buttonBg ?? '#ff6663' }} onClick={handleClick}>
+      <div
+        className="item"
+        key={index}
+        style={{ background: buttonBg ?? '#ff6663' }}
+        onClick={handleClick}
+      >
         {item}
       </div>
     );
   };
   return (
     <div>
-      <div dir="rtl" className="card">
-        {arabicText}
+      <div className="card">
+        <div dir="rtl">{arabicText}</div>
+        <div style={{ color: 'grey' }}>{englishTransliteration}</div>
       </div>
       <div className="container">
         {listOfOptions.map((item, index) => (
@@ -29,4 +40,3 @@ export default function Frame({ arabicText, listOfOptions, onClickAction }) {
     </div>
   );
 }
-
