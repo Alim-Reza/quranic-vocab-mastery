@@ -45,6 +45,13 @@ function App() {
 
 export default App;
 
+// todo:
+// -> give it an algorithm provess to repeat the errors again.
+// -> give the english transliteration below the arabic , bottom-left aligned
+// -> make the progressbar fixed position on top, and give it some padding on both left and right corner
+//
+//
+
 const data_set = [
   {
     ayahNumber: 0,
