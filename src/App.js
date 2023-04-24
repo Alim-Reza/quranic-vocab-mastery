@@ -14,7 +14,7 @@ function App() {
     );
   }, [currentAyah]);
   return (
-    <div className="App">
+    <div className="App" style={{ paddingLeft: '2em', paddingRight: '2em' }}>
       <Analytics />
       <ProgressBar progress={(currentAyah * 100) / data_set.length} />
       <div style={{ paddingTop: '2em' }}>

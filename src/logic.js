@@ -17,13 +17,22 @@ const getOptions = (currentAyah, englishWordMeaningPool, data_set) => {
   return randomListOfStrings;
 };
 
-const onClickAction = (currentAyah, setCurrentAyah, data_set, selectedOption) => {
-  if(selectedOption.target.innerHTML === data_set[currentAyah].meaning) {
-    setCurrentAyah(prev => prev + 1);
+const onClickAction = (
+  currentAyah,
+  setCurrentAyah,
+  data_set,
+  selectedOption
+) => {
+  if (selectedOption.target.innerHTML === data_set[currentAyah].meaning) {
+    setCurrentAyah((prev) => prev + 1);
   } else {
+    tryThisPhraseAgain(currentAyah, data_set);
     return true;
   }
-}
+};
+const tryThisPhraseAgain = (currentAyah, data_set) => {
+  // data_set.splice(data_set[currentAyah + 1], 0, data_set[currentAyah + 1]);
+};
 
 export const Logic = {
   getOptions,

@@ -27,7 +27,7 @@
   height: 3em; /* Set the height of each item */
   margin-bottom: 10px; /* Add a margin to the bottom of each item */
   border: 1px solid teal;
-  border-radius: 5%;
+  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;

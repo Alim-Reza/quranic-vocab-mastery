@@ -30,7 +30,9 @@ export default function Frame({
     <div>
       <div className="card">
         <div dir="rtl">{arabicText}</div>
-        <div style={{ color: 'grey' }}>{englishTransliteration}</div>
+        <div style={{ color: 'grey', fontStyle: 'italic' }}>
+          {englishTransliteration}
+        </div>
       </div>
       <div className="container">
         {listOfOptions.map((item, index) => (
