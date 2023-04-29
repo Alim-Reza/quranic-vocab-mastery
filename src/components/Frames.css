@@ -1,13 +1,23 @@
 .card {
   border: 1px solid teal;
-  padding: 2em 2em;
+  /* padding: 2em 2em; */
   border-radius: 10px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-smaller {
   padding: 1em 1em;
   width: 50%;
+}
+
+.card-item-english {
+  color: grey;
+  font-style: italic;
+  padding: 2em 2em 1em 1em;
+  display: flex;
+  align-items: start;
 }
 
 .container {

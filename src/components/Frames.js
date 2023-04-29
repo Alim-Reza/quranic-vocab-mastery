@@ -29,8 +29,8 @@ export default function Frame({
   return (
     <div>
       <div className="card">
-        <div dir="rtl">{arabicText}</div>
-        <div style={{ color: 'grey', fontStyle: 'italic' }}>
+        <div dir="rtl" style={{ paddingTop: "2em" }}>{arabicText}</div>
+        <div className='card-item-english' >
           {englishTransliteration}
         </div>
       </div>
