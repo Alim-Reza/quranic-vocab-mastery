@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Frame from './components/Frames.js';
-import { Logic } from './logic.js';
+import Frame from './components/Frames/Frames.js';
+import { Logic } from './util/logic.js';
 import ProgressBar from './components/ProgressBar/ProgressBar.js';
 import { Analytics } from '@vercel/analytics/react';
 function App() {
