@@ -53,6 +53,17 @@ export default App;
 //
 //
 
+const data_set_kawsar = [
+  {
+    ayahNumber: 0,
+    phraseEnglish: 'Bismillah',
+    phraseArabic: 'بِسْمِ اللهِ ',
+    meaning: 'In the name of Allah',
+  },
+];
+
+
+
 const data_set = [
   {
     ayahNumber: 0,
